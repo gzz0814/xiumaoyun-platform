@@ -190,6 +190,7 @@
 ---
 
 ## 七、打赏
-<img width="1152" height="1152" alt="微信图片_20261114192502_225_124" src="https://github.com/user-attachments/assets/9f682261-63b0-4759-a115-93a5b6f78827" />
+<img width="452" height="452" alt="微信图片_20261114192502_225_124" src="https://github.com/user-attachments/assets/9f682261-63b0-4759-a115-93a5b6f78827" />
 如果想支持本项目，可以投喂UP (｀･ω･´)ゞ敬礼っ
+
 如果需要项目源码，请联系 web0814@qq.com ；注意！！！源码需要打赏了才能获取！！！
