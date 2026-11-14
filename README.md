@@ -187,9 +187,4 @@
 - **前端**：`npm install` → `npm run dev`（开发）/ `npm run build`（生产静态资源），开发端口 `3000`。
 - **发布包**：仓库根 `build.bat` 一键产出 jar + 前端 dist + 启停脚本到 `dis` 目录，配合 nginx 同源反向代理部署。
 - **默认账号**：`admin / admin`（生产环境请立即通过强制改密修改）。
-
-> 详见仓库根目录 `DEPLOY.md` 与后端 `README.md`。
-
 ---
-
-*本文档截图由内置无头浏览器在本地运行环境（前端 Vite + 后端 jar + MySQL/Redis）实际采集，功能与界面均取自当前定制版本。*
