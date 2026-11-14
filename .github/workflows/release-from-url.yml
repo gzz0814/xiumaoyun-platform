@@ -1,0 +1,44 @@
+name: Release 从外部URL拉取资产
+on:
+  push:
+    tags:
+      - 'v*'  # 推送tag（v1.0.1）触发工作流
+
+permissions:
+  contents: write  # 必须，允许创建Release、上传资产
+
+jobs:
+  build-release:
+    runs-on: ubuntu‑latest
+    steps:
+      - name: 下载外部jar包（Runner去外网拉取你的网盘直链）
+        run: |
+          # 替换成你的真实公开直链
+          wget -O maku‑boot.jar "http://xz.xiumaos.cn/maku/maku‑boot.jar"
+          ls -lh
+
+      - name: 安装GitHub CLI gh
+        uses: mislav/setup‑gh@v1
+
+      - name: 创建Release并上传刚下载的jar为Release资产
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          gh release create "$TAG" \
+            --title "休猫云低代码 $TAG" \
+            --notes-file <(cat <<EOF
+# 休猫云低代码 ${TAG}
+✅ PC+H5响应式
+✅ Online表单/报表/接口/建模
+✅ 国密SM2/SM3/SM4加密
+
+部署命令：
+\`\`\`bash
+java -jar maku‑boot.jar
+\`\`\`
+默认端口：8080
+默认账号密码：admin / admin，生产务必修改密码！
+EOF
+            ) \
+            maku‑boot.jar
